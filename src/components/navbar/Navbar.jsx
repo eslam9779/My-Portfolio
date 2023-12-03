@@ -6,10 +6,10 @@ const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
-        <div className='nav__bar gradient__bg'>
+        <div className='nav__bar '>
             <div className='nav__bar-name '>
                 {/* <i className='pi pi-user' ></i> */}
-                <h2 className=''style={{color:"#81AFDD"}}>Islam</h2>
+                <h2 className=''style={{color:"#81AFDD",cursor:"pointer"}}>Islam</h2>
             </div>
             <div className='nav__bar-links'>
                 <ul>

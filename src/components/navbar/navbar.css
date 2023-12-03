@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 6rem;
+    padding: 2rem 6rem ;
 }
 .nav__bar-name{
     display: flex;

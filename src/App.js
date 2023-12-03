@@ -1,11 +1,14 @@
 import './App.css';
-import {Navbar} from './components/index';
+import { Home, Navbar, Scroll_nav } from './components/index';
 import 'primeicons/primeicons.css';
+import "primereact/resources/primereact.min.css";
 
 function App() {
   return (
-    <div className="">
-      <Navbar/>
+    <div className="gradient__bg" style={{height:"100vh"}}>
+      {/* <Scroll_nav/> */}
+      <Navbar />
+      <Home />
     </div>
   );
 }
