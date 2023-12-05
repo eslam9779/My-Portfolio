@@ -4,10 +4,12 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
+
 body {
-    background-color: var(--color-bg);
+  background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(70, 110, 150, 1) 80%, rgba(70, 110, 150, 1) 100%);
 }
 
 a {
@@ -16,7 +18,7 @@ a {
 }
 
 .gradient__bg {
-  background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 25, 1) 80%, rgba(4, 12, 25, 1) 100%);
+/* background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(70, 110, 150, 1) 80%, rgba(70, 110, 150, 1) 100%); */
 }
 
 .gradient__text {
@@ -27,7 +29,7 @@ a {
 }
 
 .section__padding {
-  padding: 4rem 6rem;
+  padding: 4rem 4rem;
 }
 
 .section__margin {

@@ -25,6 +25,7 @@
     float: row;
     color: white;
     font-size: 18px;
+    font-weight: bold;
     /* margin-left: ; */
 }
 .nav__bar-links ul{

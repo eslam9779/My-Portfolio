@@ -1,0 +1,26 @@
+.skills{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.skills__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.kills h1 {
+    color: aliceblue;
+    font-size: 50px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    color: #1af7ff;
+    font-weight: bold;
+}
+
+.skills p {
+    color: #1af7ff;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    margin-top: 1rem;
+}
