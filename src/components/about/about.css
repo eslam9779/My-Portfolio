@@ -12,10 +12,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: default;
 }
 
 .about__header h1 {
-    color: aliceblue;
     font-size: 50px;
     /* font-family: 'Courier New', Courier, monospace; */
     color: #1af7ff;
@@ -36,8 +36,8 @@
     flex-direction: column;
 
     padding: 2rem;
-    background: var(--color-footer);
-
+    /* background: var(--color-footer); */
+    /* background-color: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);; */
     background: -moz-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
 
     background: -webkit-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
@@ -83,12 +83,7 @@
 }
 
 .about-me a {
-    /* font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    color: var(--color-subtext);
-    cursor: pointer; */
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,10 +144,17 @@
         margin-top: 0.5rem;
     }
 
-    .about-me h1 {
-        font-size: 28px;
+    .about__header h1 {
+        font-size: 28px !important;
         line-height: 40px;
     }
+    .about {
+        padding: 5rem 0;
+     
+     }
+     .app{
+        height: auto !important;
+     }
 }
 
 @media screen and (max-width: 350px) {
@@ -160,5 +162,15 @@
     .gpt3__whatgpt3-container .gpt3__features-container__feature {
         margin: 1rem 0;
         min-width: 100%;
+    }
+    .about-me a {
+       width: 100%;
+    }
+    .about {
+       padding: 2rem 0;
+    
+    }
+    .about__header{
+        display: none;
     }
 }

@@ -19,8 +19,8 @@ const Home = () => {
 
         <div className='home-text'>
           <div className='name'>
-            <span class="text">&nbsp;Islam&nbsp;Abdelsattar&nbsp;</span>
-            <span class="hover-text">&nbsp;Islam&nbsp;Abdelsattar&nbsp;</span>
+            <span className="text">&nbsp;Islam&nbsp;Abdelsattar&nbsp;</span>
+            <span className="hover-text">&nbsp;Islam&nbsp;Abdelsattar&nbsp;</span>
           </div>
           <h3> <div style={{ height: "2px", width: "3rem", backgroundColor: "gray", display: "inline-block" }} />  Web Developer</h3>
           <p>A passionate web developer with a focus on building dynamic

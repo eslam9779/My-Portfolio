@@ -9,7 +9,7 @@ const About = () => {
     <div className='about section__padding' id='about'>
 
       <div className='about__header'>
-        <h1 className='gradient__text'>ABOUT ME</h1>
+        <h1 className=''>ABOUT ME</h1>
         <p>My Introduction</p>
       </div>
 

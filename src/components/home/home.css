@@ -181,9 +181,25 @@
     }
     .hover-text{
        display: none;
-    }
+    }.app{
+      height: auto !important;
+   }
 }
-
+@media screen and (max-width:300px) {
+  .home{
+    padding: 1rem 0;
+  }
+  .home-image {
+    width: 180px;
+    height: 200px;
+}
+.home-links {
+  padding: 1rem 0;
+}
+.name span{
+  letter-spacing: 0;
+}
+}
 
 .name {
     position: relative;
