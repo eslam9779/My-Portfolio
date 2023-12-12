@@ -1,7 +1,8 @@
 import './App.css';
-import { About, AnimatedArrow, Home, Navbar, Scroll_nav, Services, Skills } from './components/index';
+import { About, AnimatedArrow, Home, Navbar, Scroll_nav, Skills,Qualification,Portfolio } from './components/index';
 import 'primeicons/primeicons.css';
 import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/lara-light-indigo/theme.css";     
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       </div>
       <About />
       <Skills />
-      <Services/>
+      <Qualification/>
+      <Portfolio/>
 
     </>
   );

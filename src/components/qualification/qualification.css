@@ -1,0 +1,138 @@
+.qualification {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.qualification__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qualification__header h1 {
+    color: aliceblue;
+    font-size: 50px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-weight: bold;
+
+}
+
+.qualification__header p {
+    color: #11999e;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+.qualification__containeer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    margin-top: 2rem;
+}
+.qualification__containeer-buttons{
+    display: flex;
+    flex-direction: row;
+    gap:100px;
+
+}
+
+.qualification__containeer-buttons button{
+    color: white;
+}
+
+.qualification__containeer-buttons button:hover{
+    color:  #000;
+}
+
+.qualification__timeline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 10rem;
+    padding: 3rem 0;
+
+}
+
+
+.timeline-demo .custom-marker {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-demo .custom-marker {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-demo .p-timeline-event-content,
+.timeline-demo .p-timeline-event-opposite {
+    line-height: 1;
+}
+
+@media screen and (max-width:1024px) {
+    .qualification{
+        height: auto !important;
+    }
+    
+}
+
+@media screen and (max-width: 960px) {
+    .timeline-demo .customized-timeline .p-timeline-event:nth-child(even) {
+        flex-direction: row !important;
+    }
+    .timeline-demo .customized-timeline .p-timeline-event:nth-child(even) .p-timeline-event-content {
+        text-align: left !important;
+    }
+    .timeline-demo .customized-timeline .p-timeline-event-opposite {
+        flex: 0;
+    }
+    .timeline-demo .customized-timeline .p-card {
+        margin-top: 1rem;
+    }
+    .p-card {
+        margin: 1rem 0 !important;
+    }
+}
+@media screen and (max-width:640px) {
+    .qualification__header h1{
+        font-size: 40px ;
+    }
+  
+    
+}
+
+@media screen and (max-width:540px) {
+    .qualification__containeer-buttons {
+        gap: 50px !important;
+    }
+  
+    
+}
+@media screen and (max-width:325px) {
+   .qualification{
+    display: flex;
+    justify-content: start;
+    padding: 1rem 0;
+   }
+   .qualification__containeer-buttons {
+    gap: 10px !important;
+}  
+    
+}
