@@ -7,4 +7,5 @@ export {default as Feature} from './feature/Feature';
 export {default as Skills} from './skills/Skills';
 export {default as Qualification} from './qualification/Qualification';
 export {default as Portfolio} from './portfolio/Portfolio';
+export {default as Testimonial} from './testimonial/Testimonial';
 
