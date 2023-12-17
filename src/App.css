@@ -83,3 +83,30 @@ a {
  
 }
 
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.header h2::before {
+  content: "--";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: green;
+}
+
+.header h2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: green;
+  border-right: 5px solid var(--background-color);
+}
