@@ -11,21 +11,7 @@
     align-items: center;
 }
 
-.skills__header h1 {
-    color: aliceblue;
-    font-size: 50px;
-    /* font-family: 'Courier New', Courier, monospace; */
-    font-weight: bold;
 
-}
-
-.skills p {
-    color: #11999e;
-    font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 400;
-    margin-top: 1rem;
-}
 
 .skills__containeer {
     display: flex;
@@ -43,7 +29,8 @@
     align-items: center;
     width: 40%;
     height: 500px;
-    background-color: aliceblue;
+    color: white;
+    background-color: #314c74;
     box-sizing: border-box;
 
     /* padding: 2rem; */

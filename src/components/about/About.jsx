@@ -6,14 +6,14 @@ import Islam_cv from '../../assets/Islam_cv.pdf'
 const About = () => {
 
   return (
-    <div className='about section__padding' id='about'>
+    <div className='about section__padding' id='About'>
 
-      <div className='about__header'>
-        <h1 className=''>ABOUT ME</h1>
+      <div className='about__header section-title'>
+        <h2 className='gradient__text'>ABOUT ME</h2>
         <p>My Introduction</p>
       </div>
 
-      <div className='whoIam section__margin gradient__bg'>
+      <div className='whoIam section__margin '>
         <div className='whoIam-feature'>
           <Feature title="Who &nbsp;&nbsp;Am &nbsp; I &nbsp;?" text="
           I am a seasoned full-stack web developer specializing in the dynamic 
@@ -24,7 +24,7 @@ const About = () => {
         </div>
         <div className='about-me'>
           <h1 className='gradient__text'>Know More About Me</h1>
-          <a href={Islam_cv} download="islam Abdelsattar cv"><p>Download CV</p></a> 
+          <a href={Islam_cv} download="islam Abdelsattar cv">Download CV</a> 
         </div>
 
         <div className='whoIam-container'>

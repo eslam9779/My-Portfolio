@@ -17,9 +17,6 @@ a {
   text-decoration: none;
 }
 
-.gradient__bg {
-/* background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(70, 110, 150, 1) 80%, rgba(70, 110, 150, 1) 100%); */
-}
 
 .gradient__text {
   background: var(--gradient-text);
@@ -83,30 +80,47 @@ a {
  
 }
 
-.header{
+.section-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding-bottom: 60px;
+  font-size: 50px;
+  font-weight: bold;
 
 }
-.header h2::before {
-  content: "--";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: green;
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+
 }
 
-.header h2::after {
+.section-title h2:before,
+.section-title h2:after {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
+  width: 50px;
   height: 2px;
-  background: green;
-  border-right: 5px solid var(--background-color);
+  background: white;
+  display: inline-block;
+}
+
+.section-title h2:before {
+  margin: 0 15px 10px 0;
+}
+
+.section-title h2:after {
+  margin: 0 0 10px 15px;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  color: #d5deef !important;
+  font-size: 17px;
+  font-family: 'Courier New', Courier, monospace;
+
+
 }

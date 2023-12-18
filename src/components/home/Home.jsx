@@ -1,14 +1,11 @@
 import React from 'react'
 import './home.css'
-import {AnimatedArrow} from '../index'
 
 const Home = () => {
 
-
-
   return (
     <>
-      <div className='home section__padding' id='home'>
+      <div className='home section__padding' id='Home'>
 
         <div className='home-links'>
           <a href='https://www.instagram.com/islam_abdo97/'><i className="pi pi-instagram" style={{ color: "#c32aa3" }} title="Instagram"></i></a>
@@ -25,19 +22,16 @@ const Home = () => {
           <h3> <div style={{ height: "2px", width: "3rem", backgroundColor: "gray", display: "inline-block" }} />  Web Developer</h3>
           <p>A passionate web developer with a focus on building dynamic
             and engaging user experiences.
-            {/* I specialize in utilizing React for front-end development and PHP for server-side scripting */}
           </p>
 
-          <a href='#contact'> Contact Me  <i className='pi pi-send' style={{ fontSize: "1.2rem", marginLeft: ".5rem" }}></i></a>
+          <a href='#Contact'> Contact Me  <i className='pi pi-send' style={{ fontSize: "1.2rem", marginLeft: ".5rem" }}></i></a>
         </div>
 
         <div className='home-image '>
-          {/* <img src={islam} style={{opacity:"",width:"100%"}}></img> */}
 
         </div>
 
       </div>
-      {/* <AnimatedArrow/> */}
 
     </>
 

@@ -2,6 +2,7 @@ import React from 'react'
 import './skills.css'
 
 const Skills = () => {
+
   const BACKEndSkills = [
     {
       skill: "PHP",
@@ -60,15 +61,15 @@ const Skills = () => {
 
   ];
   return (
-    <div className='skills section__padding' id='skills'>
-      <div className='skills__header'>
-        <h1 className=''>SKILLS</h1>
+    <div className='skills section__padding' id='Skills'>
+      <div className='skills__header section-title '>
+        <h2 className='gradient__text'>SKILLS</h2>
         <p>My Technical Level</p>
       </div>
 
       <div className='skills__containeer'>
         <div className='skills__containeer-frontend'>
-          <h2>FrontEnd  Development</h2>
+          <h2 className='gradient__text'>FrontEnd  Development</h2>
           {frontEndSkills.map((item, index) =>
             <div className='items' key={index}>
              <h4> <i className='pi pi-check-circle'  style={{ color: "green" }}></i>   {item.skill}</h4>
@@ -78,7 +79,7 @@ const Skills = () => {
           )}
         </div>
         <div className='skills__containeer-backend'>
-          <h2>BackEnd Development</h2>
+          <h2 className='gradient__text'>BackEnd Development</h2>
           {BACKEndSkills.map((item, index) =>
             <div className='items' key={index}>
              <h4> <i className='pi pi-check-circle'  style={{ color: "green" }}></i>   {item.skill}</h4>
