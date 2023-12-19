@@ -58,37 +58,40 @@ const Portfolio = () => {
 
 
     return (
-        <div className='portfolio section__padding' id='portfolio'>
-            <div className="portfolio__header">
-                <h1>Projects</h1>
+        <div className='portfolio section__padding' id='Portfolio'>
+            <div className="section-title">
+                <h2 className='gradient__text'>Projects</h2>
                 <p>Things I’ve built so far</p>
             </div>
+
             <div className='portfolio__containeer-buttons'>
 
-                <button onClick={() => setType("")}>All</button>
-                <button onClick={() => setType("social")}>SocialMedia</button>
-                <button onClick={() => setType("landing")}>Landing Pages</button>
-                <button onClick={() => setType("education")}>Education</button>
+                <button className={type == "" ? 'active' : ''} onClick={() => setType("")}>All</button>
+                <button className={type == "social" ? 'active' : ''} onClick={() => setType("social")}>Social Media</button>
+                <button className={type == "landing" ? 'active' : ''} onClick={() => setType("landing")}>Landing Pages</button>
+                <button className={type == "education" ? 'active' : ''} onClick={() => setType("education")}>Education</button>
 
             </div>
 
             <div className='portfolio__containeer'>
 
-                {projects.filter((arrItem) => (type === "" ? true : arrItem.type === type)).map((item,index) =>
+                {projects.filter((arrItem) => (type === "" ? true : arrItem.type === type)).map((item, index) =>
 
-                    <div className="portfolio__containeer-card" key={index}>
-                        <img src={item.image} alt="Avatar" className="image" />
-                        <div className="middle">
-                            <div className="text">
+                    <div className="portfolio__containeer-card" key={index}  style={{ backgroundImage: `url(${item.image})`,height:"250px",backgroundSize:"cover",backgroundRepeat:"no-repeat" }}>
+                        <img src={item.image} alt="Avatar" className="portfolio__containeer-card_image" />
+                        <div className="portfolio__containeer-card_middle">
+                            <div className="portfolio__containeer-card_text">
                                 <h1 className='header'>{item.header}</h1>
-                                <div className='links'>
+                                <div className='portfolio__containeer-card_links'>
                                     <a href={item.livePreview}> <p>Show Live Preview</p></a>
                                     <a href={item.livePreview}> <p>GitHup</p></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>   
+                    
                 )}
+                
             </div>
 
         </div>

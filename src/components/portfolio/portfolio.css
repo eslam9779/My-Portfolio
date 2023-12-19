@@ -1,111 +1,122 @@
 .portfolio {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.portfolio__containeer-buttons {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.portfolio__containeer-buttons button {
+
+  /* width: 110px; */
+  /* height: 30px; */
+  margin: 1rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem;
+  color: white;
+  border-style: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.portfolio__containeer-buttons button:hover {
+
+  background-color: rgb(48, 151, 151);
+  color: black;
 
 }
 
-.portfolio__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.portfolio__containeer-buttons button.active {
+  background-color: rgb(48, 151, 151);
+  color: white;
 }
 
-.portfolio__header h1 {
-    color: aliceblue;
-    font-size: 50px;
-    /* font-family: 'Courier New', Courier, monospace; */
-    font-weight: bold;
-
-}
-
-.portfolio__header p {
-    color: #11999e;
-    font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 400;
-    margin-top: 1rem;
-}
-.portfolio__containeer{
-    display: grid;
+.portfolio__containeer {
+  /* display: grid;
     grid-template-columns: auto auto auto;
     gap: 20px;
     padding: 2rem 4rem;
     box-sizing: border-box;
-    margin-bottom: 4rem;
-  }
-  .portfolio__containeer-buttons{
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .portfolio__containeer-buttons button{
-    
-    width: 110px;
-    height: 30px;
-    margin: 1rem 0.5rem ;
-    background-color: transparent;
-    padding: 2px;
-    color: black;
-    border-style:none ;
-    cursor: pointer;
-  }
-  .portfolio__containeer-buttons button:hover{
-    
-   background-color: black;
-   color: aliceblue;
-  }
+    margin-bottom: 4rem; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .portfolio__containeer-card {
-    position: relative;
-    width: 90% ;
+  /* position: relative;
+    width: 30% ;
+    height: 600px !important;
     border: 1px solid black;
-    border-radius: 20px;
-  }
+    border-radius: 20px; */
+  flex: 0 0 calc(33.33% - 20px);
+  /* Set the width of each item to 33.33% with some spacing */
+  margin: 10px;
+  /* Adjust the margin as needed */
+  box-sizing: border-box;
+}
 
-  .image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: 100%;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    border-radius: 10px;
-  }
-  
-  /* .text {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    width: 100%;
+.portfolio__containeer-card_image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
 
-  } */
+.portfolio__containeer-card_text {
+  transition: .5s ease;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+
+}
 
 
-  .portfolio__containeer-card:hover .image {
-    opacity: 0.1;
-  }
-  
-  .portfolio__containeer-card:hover .middle  .text{
-    opacity: 1;
-  }
-  
-  .links{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: relative;
-    margin: 3rem;
-    bottom: 0 !important;
-    left: 0;
-  }
+.portfolio__containeer-card:hover .portfolio__containeer-card_image {
+  opacity: 0.1;
+}
+
+.portfolio__containeer-card:hover .portfolio__containeer-card_middle .text {
+  opacity: 1;
+}
+
+.portfolio__containeer-card_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  margin: 3rem;
+  bottom: 0 !important;
+  left: 0;
+}
+
+.project_card {
+  display: flex;
+  flex-direction: row;
+  width: 373px;
+  height: 567px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  flex: 0 0 calc(33.33% - 20px); /* Set the width of each item to 33.33% with some spacing */
+    box-sizing: border-box;
+  box-shadow: 2px 2px 100px 0px rgba(0, 0, 0, 0.20);
+}

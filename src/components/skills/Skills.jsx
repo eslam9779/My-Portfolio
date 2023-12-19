@@ -1,96 +1,123 @@
 import React from 'react'
 import './skills.css'
+import bootstrap from '../../assets/bootstrap.svg'
+import git from '../../assets/git.svg'
+import html from '../../assets/html.svg'
+import css from '../../assets/css.svg'
+import js from '../../assets/js.svg'
+import mysql from '../../assets/mysql.svg'
+import react from '../../assets/react.svg'
+import redux from '../../assets/redux.svg'
+import php from '../../assets/php (1).svg'
+import laravel from '../../assets/laravel.png'
+import redhat from '../../assets/redhat.png'
+import type_script from '../../assets/typescript.svg'
+import nodejs from '../../assets/nodejs.png'
+import docker from '../../assets/docker.png'
 
 const Skills = () => {
 
   const BACKEndSkills = [
     {
       skill: "PHP",
-      level: "Very good"
+      img: php
     },
     {
       skill: "LARAVEL",
-      level: "Very good"
-    },
-    {
-      skill: "MY SQL",
-      level: "Very good"
-    },
-    {
-      skill: "NodeJS",
-      level: "Intermediate"
-    },
-    {
-      skill: " Docker",
-      level: "Intermediate"
+      img: laravel
     },
     {
       skill: "Red HAT",
-      level: "Intermediate"
+      img: redhat
     },
+   
+    {
+      skill: "NodeJS",
+      img: nodejs
+    },
+    {
+      skill: " Docker",
+      img: docker
+    },
+    {
+      skill: "MY SQL",
+      img: mysql
+    },
+    
   ];
   const frontEndSkills = [
     {
       skill: "HTML5",
-      level: "Very good"
+      img: html
     },
     {
       skill: "CSS3",
-      level: "Very good"
+      img: css
 
     },
     {
       skill: "JAVE SCRIPT",
-      level: "Very good"
+      img: js
 
     },
     {
       skill: "BOOTSTRAP",
-      level: "Intermediate"
+      img: bootstrap
+
+    },
+    {
+      skill: "Git",
+      img: git
 
     },
     {
       skill: "REACT JS",
-      level: "Very good"
+      img: react
 
     },
     {
-      skill: "ANGULAR JS",
-      level: "Intermediate"
+      skill: "Redux",
+      img: redux
+    }, 
+    {
+      skill: "Type Script",
+      img: type_script
     },
+    
 
   ];
   return (
-    <div className='skills section__padding' id='Skills'>
-      <div className='skills__header section-title '>
+    <div className='skills' id='Skills'>
+      <div className=' section-title '>
         <h2 className='gradient__text'>SKILLS</h2>
         <p>My Technical Level</p>
       </div>
 
-      <div className='skills__containeer'>
-        <div className='skills__containeer-frontend'>
-          <h2 className='gradient__text'>FrontEnd  Development</h2>
-          {frontEndSkills.map((item, index) =>
-            <div className='items' key={index}>
-             <h4> <i className='pi pi-check-circle'  style={{ color: "green" }}></i>   {item.skill}</h4>
-              <p>{item.level}</p>
-            </div>
 
-          )}
-        </div>
-        <div className='skills__containeer-backend'>
-          <h2 className='gradient__text'>BackEnd Development</h2>
-          {BACKEndSkills.map((item, index) =>
-            <div className='items' key={index}>
-             <h4> <i className='pi pi-check-circle'  style={{ color: "green" }}></i>   {item.skill}</h4>
-              <p>{item.level}</p>
-            </div>
+      <div className='skills_section section__padding'>
+        {frontEndSkills.map((item,index) =>
+          <div className='skill_row' key={index}>
+            <img src={item.img} style={{ width: "80px" }} />
+            <p>{item.skill}</p>
+          </div>
 
-          )}
+        )}
 
-        </div>
       </div>
+
+      <div className='skills_section section__padding'>
+      {BACKEndSkills.map((item,index) =>
+        <div className='skill_row' key={index}>
+          <img src={item.img} style={{ width: "100px" }} />
+          <p>{item.skill}</p>
+        </div>
+
+      )}
     </div>
+
+    </div>
+
+   
   )
 }
 

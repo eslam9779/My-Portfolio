@@ -4,6 +4,7 @@ import 'primeicons/primeicons.css';
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
+
 function App() {
   return (
     <>
@@ -15,10 +16,11 @@ function App() {
       </div>
       <About />
       <Skills />
+      <Services />
+      <Portfolio />
+
       {/* <Qualification />
-      <Portfolio /> */}
       {/* <Testimonial />
-      <Services /> */}
       {/* <Contacts/>
       <Footer/> */}
     </>
