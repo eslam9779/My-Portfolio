@@ -1,11 +1,11 @@
 .portfolio {
-  height: 100vh;
+ 
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 }
 
-.portfolio__containeer-buttons {
+.portfolio__buttons {
 
   display: flex;
   flex-direction: row;
@@ -15,7 +15,7 @@
   flex-wrap: wrap;
 }
 
-.portfolio__containeer-buttons button {
+.portfolio__buttons button {
 
   /* width: 110px; */
   /* height: 30px; */
@@ -28,95 +28,73 @@
   border-radius: 10px;
 }
 
-.portfolio__containeer-buttons button:hover {
+.portfolio__buttons button:hover {
 
   background-color: rgb(48, 151, 151);
   color: black;
 
 }
 
-.portfolio__containeer-buttons button.active {
+.portfolio__buttons button.active {
   background-color: rgb(48, 151, 151);
   color: white;
 }
 
 .portfolio__containeer {
-  /* display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
-    padding: 2rem 4rem;
-    box-sizing: border-box;
-    margin-bottom: 4rem; */
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; 
 }
-
 .portfolio__containeer-card {
-  /* position: relative;
-    width: 30% ;
-    height: 600px !important;
-    border: 1px solid black;
-    border-radius: 20px; */
-  flex: 0 0 calc(33.33% - 20px);
-  /* Set the width of each item to 33.33% with some spacing */
-  margin: 10px;
-  /* Adjust the margin as needed */
-  box-sizing: border-box;
+  position: relative;
+  border: 2px solid #7187c4;
+  margin: 1rem 3rem;
+  overflow: hidden;
+  width: 400px ;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  cursor: pointer;
+  
 }
 
-.portfolio__containeer-card_image {
-  opacity: 1;
-  display: block;
+.portfolio__containeer-card-image {
   width: 100%;
   height: 100%;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  border-radius: 10px;
+  transition: opacity 0.3s;
 }
 
-.portfolio__containeer-card_text {
-  transition: .5s ease;
-  opacity: 1;
+.portfolio__containeer-card:hover .portfolio__containeer-card-image {
+  opacity: 0.7; 
+}
+
+.portfolio__containeer-card-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  font-size: 16px;
+  bottom: 0;
+  left: 0;
   width: 100%;
-
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px;
+  margin: 0;
+  opacity: 0; 
+  transition: opacity 0.3s;
+  cursor: pointer;
 }
 
-
-.portfolio__containeer-card:hover .portfolio__containeer-card_image {
-  opacity: 0.1;
-}
-
-.portfolio__containeer-card:hover .portfolio__containeer-card_middle .text {
+.portfolio__containeer-card:hover .portfolio__containeer-card-text {
   opacity: 1;
 }
 
-.portfolio__containeer-card_links {
+.Project_header {
+
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  position: relative;
-  margin: 3rem;
-  bottom: 0 !important;
-  left: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px !important;
+  color: #fff;
+  
 }
 
-.project_card {
-  display: flex;
-  flex-direction: row;
-  width: 373px;
-  height: 567px;
-  flex-shrink: 0;
-  border-radius: 20px;
-  flex: 0 0 calc(33.33% - 20px); /* Set the width of each item to 33.33% with some spacing */
-    box-sizing: border-box;
-  box-shadow: 2px 2px 100px 0px rgba(0, 0, 0, 0.20);
-}
