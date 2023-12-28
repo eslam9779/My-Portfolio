@@ -23,8 +23,8 @@ const Skills = () => {
       img: php
     },
     {
-      skill: "LARAVEL",
-      img: laravel
+      skill: "MY SQL",
+      img: mysql
     },
     {
       skill: "Red HAT",
@@ -39,9 +39,10 @@ const Skills = () => {
       skill: " Docker",
       img: docker
     },
+   
     {
-      skill: "MY SQL",
-      img: mysql
+      skill: "LARAVEL",
+      img: laravel
     },
     
   ];

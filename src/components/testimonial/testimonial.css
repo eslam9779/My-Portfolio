@@ -77,10 +77,12 @@
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    
 }
 
 .card .face.front-face .name {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-size: 35px;
 }
 
 .card .face.front-face .designation {

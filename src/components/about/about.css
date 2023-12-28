@@ -85,7 +85,12 @@
 .gpt3__whatgpt3-container  {
     margin-top: 0.5rem;
 }
-
+@media screen and (max-width: 1080px) {
+  
+    .about{
+        height: auto;
+    }
+}
 @media screen and (max-width: 850px) {
     .whoIam-feature p {
         line-height: 20px !important;
@@ -95,9 +100,9 @@
         align-items: flex-start;
         margin-bottom: 0rem;
     }
-    .about{
+    /* .about{
         height: auto;
-    }
+    } */
 
     .about-me a {
         margin-top: 1rem;

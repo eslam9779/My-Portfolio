@@ -1,99 +1,158 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './contacts.css'
+import axios from 'axios';
 
 const Contacts = () => {
-    return (
-        <div className='contact section__padding'>
-            <div class="container section-title header" data-aos="fade-up">
-                <h2>Contact</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-            </div>
 
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+  const myContacts = [
+    {
+      Header: "Address",
+      content: "Faisal street , Giza, Egypt",
+      icon: "home"
+    },
+    {
+      Header: "Call Me",
+      content: "01017392616",
+      icon: "call"
+    }, {
+      Header: "Email Me",
+      content: "eslamabdo9779@gmail.com",
+      icon: "mail"
 
-                <div class="row gy-4">
+    }, {
+      Header: "Open Hours ",
+      OpenDays: "Saturday-thursday",
+      OpenHours: "8:00AM-8:00PM",
+      icon: "schedule"
 
-                    <div class="col-lg-6">
+    },
+  ]
 
-                        <div class="row gy-4">
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="200">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h3>Address</h3>
-                                    <p>A108 Adam Street</p>
-                                    <p>New York, NY 535022</p>
-                                </div>
-                            </div>
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const handleChange = (e) => {
+    // const { name, value } = e.target;
+    // setFormData({
+    //   ...formData,
+    //   [name]: value,
+    // });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="300">
-                                    <i class="pi pi-telephone"></i>
-                                    <h3>Call Us</h3>
-                                    <p>+1 5589 55488 55</p>
-                                    <p>+1 6678 254445 41</p>
-                                </div>
-                            </div>
+  };
 
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="400">
-                                    <i class="pi pi-envelope"></i>
-                                    <h3>Email Us</h3>
-                                    <p>info@example.com</p>
-                                    <p>contact@example.com</p>
-                                </div>
-                            </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      const response = axios.post('http://localhost:3001/send-email', formData);
 
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="500">
-                                    <i class="bi bi-clock"></i>
-                                    <h3>Open Hours</h3>
-                                    <p>Monday - Friday</p>
-                                    <p>9:00AM - 05:00PM</p>
-                                </div>
-                            </div>
+      if (response.status === 200) {
+        console.log('Email sent successfully!');
+      } else {
+        console.error('Failed to send email.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
-                        </div>
+  return (
+    <div className='contact section__padding ' id='Contact' >
+      <div className="container section-title " data-aos="fade-up">
+        <h2 className='gradient__text'>Contact</h2>
+        <p>Contact Me</p>
+      </div>
 
-                    </div>
+      <div className="container" data-aos="fade-up" data-aos-delay="100">
 
-                    <div class="col-lg-6">
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                            <div class="row gy-4">
+        <div className="row gy-4">
+          <div className="col-lg-6">
 
-                                <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required />
-                                </div>
+            <div className="row gy-4">
+              {myContacts.map((item, index) =>
 
-                                <div class="col-md-6 ">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required />
-                                </div>
-
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" name="subject" placeholder="Subject" required />
-                                </div>
-
-                                <div class="col-md-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required> </textarea>
-                                </div>
-
-                                <div class="col-md-12 text-center">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                    <button type="submit">Send Message</button>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-
+                <div className="col-md-6 text-white" key={index}>
+                  <div className="info-item" >
+                    <span className="material-symbols-outlined" style={{ fontSize: "40px", color: "white" }}>{item.icon}</span>
+                    <h3 className='gradient__text'>{item.Header}</h3>
+                    <p>{item.content}</p>
+                    <p>{item.OpenDays}</p>
+                    <p>{item.OpenHours}</p>
+                  </div>
                 </div>
+              )}
 
             </div>
+
+          </div>
+
+        
+          <div className="col-lg-6">
+            <form onSubmit={handleSubmit} className="php-email-form">
+              <div className="row gy-4">
+                <div className="col-md-6">
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="form-control"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div className="col-md-6">
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="form-control"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div className="col-md-12">
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="form-control"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div className="col-md-12">
+                  <textarea
+                    className="form-control"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows="6"
+                    placeholder="Message"
+                    required
+                  ></textarea>
+                </div>
+                <div className="col-md-12 text-center">
+                  <div className="loading">Loading</div>
+                  <div className="error-message"></div>
+                  <div className="sent-message">Your message has been sent. Thank you!</div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
 
         </div>
-    )
+
+      </div>
+
+    </div>
+  )
 }
 
 export default Contacts

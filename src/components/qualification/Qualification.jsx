@@ -11,7 +11,8 @@ import { Timeline } from 'primereact/timeline';
 import { Card } from 'primereact/card';
 
 const Qualification = () => {
-    const [toggle, setToggle] = useState(true);
+
+    const [toggle, setToggle] = useState(false);
 
     const education = [
         { status: 'ITI', date: '3/1/2023', text: 'Intensive Coding Camp - Full Stack Web Development Using PHP From Information Technology Institute (ITI)', color: '#FF9800' },
@@ -39,35 +40,37 @@ const Qualification = () => {
 
     const getEducationUi = () => (
         <Timeline value={education} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
-    ); 
-     const getExperienceUi = () => (
+    );
+    const getExperienceUi = () => (
         <Timeline value={Experience} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
     );
 
     return (
-        <div className="qualification section__padding" id='qualification'>
-            <div className="qualification__header">
-                <h1>Qualifications</h1>
+        <div className="qualification section__padding" id='Qualifications'>
+            <div className="section-title">
+                <h2 className='gradient__text'>Qualifications</h2>
                 <p>My personal journey</p>
             </div>
 
             <div className='qualification__containeer'>
 
-            <div className='qualification__containeer-buttons'>
+                <div className='portfolio__buttons'>
 
                     <div>
-                        <Button text onClick={() => setToggle(true)}>
+                        <Button text className={toggle == false ? 'active' : ''} onClick={() => setToggle(false)}>
+                            <span className="material-symbols-outlined" style={{ color: "black" }}>shopping_bag</span> &nbsp;  Experience
+
+                        </Button>
+                    </div>
+                    <div>
+                        <Button text className={toggle == true ? 'active' : ''} onClick={() => setToggle(true)}>
                             <span className="material-symbols-outlined" style={{ color: "black" }}>school</span> &nbsp; Education
                         </Button>
                     </div>
-                    <div>
-                        <Button  text onClick={() => setToggle(false)}>
-                                <span className="material-symbols-outlined" style={{ color: "black" }}>shopping_bag</span> &nbsp;  Experience
 
-                        </Button>
-                    </div>
+                </div>
             </div>
-        </div>
+
             <div className="qualification__timeline">
                 <div style={toggle ? { display: '' } : { display: 'none' }}>
                     {getEducationUi()}

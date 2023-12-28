@@ -18,11 +18,10 @@ function App() {
       <Skills />
       <Services />
       <Portfolio />
-
-      {/* <Qualification />
-      {/* <Testimonial />
-      {/* <Contacts/>
-      <Footer/> */}
+      <Qualification />
+       <Testimonial />
+       <Contacts/>
+      <Footer/>
     </>
   );
 }

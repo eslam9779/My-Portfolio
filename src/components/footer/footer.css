@@ -1,8 +1,8 @@
 .footer {
     --background-color: #f4f4f4;
-    color: var(--default-color);
-    background-color: var(--background-color);
+    background-color: rgb(30, 70, 109) ;
     font-size: 14px;
+    color: #f4f4f4;
     padding-bottom: 50px;
   }
   
@@ -21,43 +21,40 @@
   }
   
   .footer .footer-about .logo span {
-    color: var(--secondary-color);
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
-    font-family: var(--heading-font);
   }
   
   .footer .footer-about p {
     font-size: 14px;
-    font-family: var(--heading-font);
   }
   
   .footer .social-links a {
     display: flex;
+    margin-top: 1rem;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid rgba(var(--default-color-rgb), 0.5);
     font-size: 16px;
-    color: rgba(var(--default-color-rgb), 0.5);
     margin-right: 10px;
     transition: 0.3s;
   }
-  
-  .footer .social-links a:hover {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+  .social-links i{
+    font-size: 1.7rem;
+
   }
+ 
   
   .footer h4 {
-    color: var(--secondary-color);
     font-size: 16px;
     font-weight: bold;
     position: relative;
     padding-bottom: 12px;
+    color: aqua;
+    
   }
   
   .footer .footer-links {
@@ -87,13 +84,12 @@
   }
   
   .footer .footer-links ul a {
-    color: rgba(var(--default-color-rgb), 0.8);
     display: inline-block;
     line-height: 1;
   }
   
   .footer .footer-links ul a:hover {
-    color: var(--primary-color);
+    color: #000;
   }
   
   .footer .footer-contact p {
@@ -103,7 +99,6 @@
   .footer .copyright {
     padding-top: 25px;
     padding-bottom: 25px;
-    background-color: rgba(var(--default-color-rgb), 0.05);
   }
   
   .footer .copyright p {

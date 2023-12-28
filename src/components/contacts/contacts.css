@@ -1,18 +1,16 @@
 .contact .info-item {
     background: rgba(33, 37, 41, 0.03);
     padding: 30px;
+    background-color:rgba(54, 146, 195, 0.2);
+
   }
   
-  .contact .info-item i {
-    font-size: 38px;
-    line-height: 0;
-    color: #e84545;
-  }
   
   .contact .info-item h3 {
     font-size: 20px;
     font-weight: 700;
     margin: 20px 0 10px 0;
+    
   }
   
   .contact .info-item p {
@@ -23,9 +21,9 @@
   }
   
   .contact .php-email-form {
-    background: rgba(33, 37, 41, 0.03);
     padding: 30px;
     height: 100%;
+    background-color:rgba(54, 146, 195, 0.2);
   }
   
   .contact .php-email-form .error-message {
@@ -36,6 +34,7 @@
     padding: 15px;
     margin-bottom: 24px;
     font-weight: 600;
+    
   }
   
   .contact .php-email-form .sent-message {
@@ -99,7 +98,7 @@
   }
   
   .contact .php-email-form button[type=submit] {
-    background: #e84545;
+    background: black;
     color: #ffffff;
     border: 0;
     padding: 10px 30px;

@@ -1,8 +1,7 @@
 .portfolio {
- 
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 8rem;
 }
 
 .portfolio__buttons {
@@ -17,8 +16,6 @@
 
 .portfolio__buttons button {
 
-  /* width: 110px; */
-  /* height: 30px; */
   margin: 1rem 0.5rem;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 0.5rem;
@@ -45,19 +42,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
+
 .portfolio__containeer-card {
   position: relative;
   border: 2px solid #7187c4;
   margin: 1rem 3rem;
   overflow: hidden;
-  width: 400px ;
+  width: 310px;
   height: 250px;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   cursor: pointer;
-  
+
 }
 
 .portfolio__containeer-card-image {
@@ -67,7 +65,7 @@
 }
 
 .portfolio__containeer-card:hover .portfolio__containeer-card-image {
-  opacity: 0.7; 
+  opacity: 0.7;
 }
 
 .portfolio__containeer-card-text {
@@ -79,7 +77,7 @@
   color: #fff;
   padding: 8px;
   margin: 0;
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.3s;
   cursor: pointer;
 }
@@ -95,6 +93,53 @@
   align-items: center;
   font-size: 15px !important;
   color: #fff;
-  
+
+}
+
+
+@media screen and (max-width:960px) {
+
+  .portfolio__containeer {
+    gap: 30px;
+    margin-top: 2rem;
+
+  }
+
+  .Project_header h4 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width:425px) {
+
+  .portfolio__containeer-card {
+
+    width: 200px;
+    padding: 0;
+  }
+
+  .portfolio__containeer {
+    padding: 0;
+  }
+}
+
+.special-ribbon {
+  --f: 10px;
+  /* control the folded part*/
+  --r: 15px;
+  /* control the ribbon shape */
+  --t: 10px;
+  /* the top offset */
+
+  position: absolute;
+  inset: var(--t) calc(-1*var(--f)) auto auto;
+  padding: 0 10px var(--f) calc(10px + var(--r));
+  clip-path:
+    polygon(0 0, 100% 0, 100% calc(100% - var(--f)), calc(100% - var(--f)) 100%,
+      calc(100% - var(--f)) calc(100% - var(--f)), 0 calc(100% - var(--f)),
+      var(--r) calc(50% - var(--f)/2));
+  background: #ff0000;
+  box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+  opacity: 1;
 }
 
