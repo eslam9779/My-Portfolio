@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './contacts.css'
 import axios from 'axios';
+import { Toast } from 'primereact/toast';
+import { ProgressSpinner } from 'primereact/progressspinner';
 
 const Contacts = () => {
 
@@ -34,32 +36,40 @@ const Contacts = () => {
     subject: '',
     message: '',
   });
-  const handleChange = (e) => {
-    // const { name, value } = e.target;
-    // setFormData({
-    //   ...formData,
-    //   [name]: value,
-    // });
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const [isLoading, setIsLoading] = useState(false);
+  const toast = useRef(null);
 
+  const handleChange = (e) => {
+
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    setIsLoading(true);
+
     e.preventDefault();
     try {
-      const response = axios.post('http://localhost:3001/send-email', formData);
+      const response = await axios.post('https://contact-form-api-dlbe.onrender.com/submit-form', formData);
 
       if (response.status === 200) {
-        console.log('Email sent successfully!');
+        toast.current.show({severity:'success', summary: 'Success', detail:'Message Sent Successfully', life: 3000,
+        style: {padding:"15px"}});
+        setFormData({ name: '', email: '', subject: '', message: '' });
+
       } else {
-        console.error('Failed to send email.');
+        toast.current.show({severity:'error', summary: 'Error', detail:'Fail to Send message', life: 3000, style: {padding:"15px"}});
       }
     } catch (error) {
-      console.error('Error:', error);
+      toast.current.show({severity:'error', summary: 'Error', detail:'Fail to Send message', life: 3000, style: {padding:"15px"}});
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
+    <>
+          <Toast ref={toast}   />
+
     <div className='contact section__padding ' id='Contact' >
       <div className="container section-title " data-aos="fade-up">
         <h2 className='gradient__text'>Contact</h2>
@@ -89,7 +99,7 @@ const Contacts = () => {
 
           </div>
 
-        
+
           <div className="col-lg-6">
             <form onSubmit={handleSubmit} className="php-email-form">
               <div className="row gy-4">
@@ -138,10 +148,11 @@ const Contacts = () => {
                   ></textarea>
                 </div>
                 <div className="col-md-12 text-center">
-                  <div className="loading">Loading</div>
-                  <div className="error-message"></div>
-                  <div className="sent-message">Your message has been sent. Thank you!</div>
-                  <button type="submit">Send Message</button>
+                  {isLoading ? (
+                    <ProgressSpinner />
+                  ) : (
+                    <button type="submit">Submit Form</button>
+                  )}
                 </div>
               </div>
             </form>
@@ -152,7 +163,10 @@ const Contacts = () => {
       </div>
 
     </div>
+    </>
+
   )
+
 }
 
 export default Contacts

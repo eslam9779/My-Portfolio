@@ -123,13 +123,10 @@
   }
 }
 
-.special-ribbon {
+/* .special-ribbon {
   --f: 10px;
-  /* control the folded part*/
   --r: 15px;
-  /* control the ribbon shape */
   --t: 10px;
-  /* the top offset */
 
   position: absolute;
   inset: var(--t) calc(-1*var(--f)) auto auto;
@@ -141,5 +138,5 @@
   background: #ff0000;
   box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
   opacity: 1;
-}
+} */
 
