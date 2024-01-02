@@ -127,3 +127,24 @@ a {
 
 
 }
+@media screen and (max-width:670px){
+ 
+  .section-title h2 {
+    font-size: 25px;
+    font-weight: 700;
+    position: relative;
+  
+  }
+  
+  .section-title h2:before,
+  .section-title h2:after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: white;
+    display: inline-block;
+  }
+  
+
+
+}
