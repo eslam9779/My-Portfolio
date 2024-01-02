@@ -91,7 +91,7 @@ const Portfolio = () => {
                         
                         <div className="portfolio__containeer-card" onClick={() => goToProject(item)}>
                              {/* <div className="special-ribbon">Special</div> */}
-                            <img src={item.image} className="portfolio__containeer-card-image" />
+                            <img src={item.image} className="portfolio__containeer-card-image"  loading="lazy" />
                             <div className="portfolio__containeer-card-text">{item.text}</div>
                         </div>
                         <div className='Project_header'><h4>{item.header}</h4></div>

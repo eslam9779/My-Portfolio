@@ -14,8 +14,20 @@ import redhat from '../../assets/redhat.png'
 import type_script from '../../assets/typescript.svg'
 import nodejs from '../../assets/nodejs.png'
 import docker from '../../assets/docker.png'
+import { useSpring, animated } from 'react-spring';
+import { useInView } from 'react-intersection-observer';
 
 const Skills = () => {
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const animationProps = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateX(0%)' : window.innerWidth > 768 ? 'translateX(-100%)' : 'translateX(-50%)',
+    config: { duration: window.innerWidth > 768 ? 900 : 500 }, // Adjust duration based on screen size
+  });
 
   const BACKEndSkills = [
     {
@@ -87,7 +99,7 @@ const Skills = () => {
     
 
   ];
-  return (
+  return     <animated.div ref={ref} style={animationProps}>
     <div className='skills' id='Skills'>
       <div className=' section-title '>
         <h2 className='gradient__text'>SKILLS</h2>
@@ -109,7 +121,7 @@ const Skills = () => {
       <div className='skills_section section__padding'>
       {BACKEndSkills.map((item,index) =>
         <div className='skill_row' key={index}>
-          <img src={item.img} style={{ width: "100px" }} />
+          <img src={item.img} style={{ width: "100px" }} loading='lazy'/>
           <p>{item.skill}</p>
         </div>
 
@@ -119,7 +131,8 @@ const Skills = () => {
     </div>
 
    
-  )
+    </animated.div>;
+
 }
 
 export default Skills

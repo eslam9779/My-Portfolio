@@ -2,10 +2,23 @@ import React from 'react'
 import './about.css'
 import { Feature } from '../index'
 import Islam_cv from '../../assets/Islam_cv.pdf'
+import { useSpring, animated } from 'react-spring';
+import { useInView } from 'react-intersection-observer';
 
-const About = () => {
+const About = ({ children, fromLeft, to }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
 
-  return (
+  const animationProps = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateX(0%)' : window.innerWidth > 768 ? 'translateX(-100%)' : 'translateX(-50%)',
+    config: { duration: window.innerWidth > 768 ? 900 : 500 }, // Adjust duration based on screen size
+  });
+
+  return     <animated.div ref={ref} style={animationProps}>
+
+
     <div className='about section__padding' id='About'>
 
       <div className='about__header section-title'>
@@ -36,7 +49,7 @@ const About = () => {
       </div>
 
     </div>
-  )
+    </animated.div>;
 }
 
 export default About;
